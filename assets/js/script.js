@@ -39,7 +39,7 @@ var submitBtn = document.getElementById('search-btn'); //grab button element
 
 //uses geocode API to generate location based on city name
 // function returns an array containing [lat, long]
-function generateLocation(cityName, stateCode, countryCode){
+function getCoordinates(cityName, stateCode, countryCode){
     var locationGeocode = geocodeFullAPI;
     var cityGeocode = geocodeCityAPI;
     var latLong = [latitudeDefault, longitudeDefault];
@@ -55,7 +55,7 @@ function generateLocation(cityName, stateCode, countryCode){
         .then (function (data){
             //check for valid data
             if(data.length == 0){ 
-                alert("Please enter a valid city");
+                alert("Please enter a valid city.");
                 return; 
             }//END check
             console.log(data);
@@ -71,12 +71,16 @@ function getUserInput(){
     console.log(cityName);
     var countryCode;
     var stateCode;
+    //verify that there is input
+    if(cityName == ''){ 
+        alert("Please type in a city.");
+        return; 
+    }
+
+    getCoordinates(cityName); //this should return a lon, lat array
 
 
-    generateLocation(cityName); 
-
-
-    // generateLocation(cityNameDefault, stateCodeDefault, countryCodeDefault);
+    // getCoordinates(cityNameDefault, stateCodeDefault, countryCodeDefault);
 }
 
 submitBtn.addEventListener('click', getUserInput);
@@ -92,8 +96,38 @@ submitBtn.addEventListener('click', getUserInput);
 //     });
 
 
-function grabData(){
+function getWeather(){
 
 }
 
-grabData();
+
+//save the city, lat, and long into localStorage
+//format should be as follows:
+
+/*
+//saves the most recent cities in search history
+var searchHistory = [
+    san diego{lon, lat},
+    mexico city{lon, lat}
+    london{lon, lat}
+];
+
+//functionality would be shift old city, push new city
+
+*/
+function saveData(){
+    //this function should overwrite localStorage data after each search
+}
+
+
+function loadData(){
+    //load data from localStorage
+    //the last search should be displayed onto the screen when visiting the page
+}
+
+function getDate(){
+    //grabs current date 
+    //function used when populating page with weather data
+    //returns a date somehow (unsure API format yet)
+}
+
