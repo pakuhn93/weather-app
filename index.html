@@ -11,7 +11,7 @@
 </head>
 <body class="text-light bg-dark">
     <!-- Weather Dashboard -->
-    <header class="d-flex justify-content-around mb-4">
+    <header class="d-flex justify-content-around m-3">
         My Weather Dashboard
     </header>
 
@@ -24,15 +24,15 @@
                 <label for="city">City:</label>
                 <input type="text" class="form-control" id="city" placeholder="City">
             </div>
-            <div class="form-group">
+            <div hidden class="form-group">
                 <label for="country">Country:</label>
                 <input type="text" class="form-control" id="country" placeholder="Country">
             </div>
-            <div class="form-group">
+            <div hidden class="form-group">
                 <label for="state">State:</label>
                 <input type="text" class="form-control" id="state" placeholder="State">
             </div>
-            <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+            <button type="button" class="btn btn-secondary btn-lg" id="search-btn">Search</button>
         </form>
 
         <!-- Search History Buttons -->
@@ -41,9 +41,7 @@
             <button type="button" class="btn btn-secondary" style="width: 18rem;">Search Result 2</button>
             <button type="button" class="btn btn-secondary" style="width: 18rem;">Search Result 3</button>
             <button type="button" class="btn btn-secondary" style="width: 18rem;">Search Result 4</button>
-
             <button type="button" class="btn btn-secondary" style="width: 18rem;">Search Result 5</button>
-
             <button type="button" class="btn btn-secondary" style="width: 18rem;">Search Result 6</button>
             
         </div>
@@ -51,7 +49,7 @@
 
         <!-- Current Day Forecast Card -->
         <div class="col">
-            <div class="card bg-primary" style="height: 16rem;">
+            <div class="card bg-primary" style="height: 20rem;">
                 <div class="card-header bg-warning text-secondary">1</div>
                 <div class="card-body">
                     <h5 class="card-title">Primary card title</h5>
